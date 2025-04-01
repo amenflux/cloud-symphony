@@ -1,6 +1,6 @@
 # Cloud Symphony Automation Dashboard
 
-![Dashboard Preview]([[https://imgur.com/a/g4sEaA3](https://i.postimg.cc/gJmKg9xT/temp-Image4-Xnndr.avif))
+[![Dashboard Preview](https://i.postimg.cc/gJmKg9xT/temp-Image4-Xnndr.avif)](https://postimg.cc/JyYJh2cN)
 
 A DevOps project demonstrating cloud infrastructure automation with Terraform/Ansible, featuring a visualization dashboard for infrastructure provisioning and configuration management.
 
