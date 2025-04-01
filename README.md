@@ -57,24 +57,69 @@ Create a DevOps project that provisions and configures cloud infrastructure for 
 
 ```plaintext
 cloud-symphony/
+├── public/
+│   ├── favicon.ico                # Application favicon
+│   ├── placeholder.svg            # Image placeholder
+│   └── robots.txt                 # Robots configuration
+│
 ├── src/
-│   ├── components/       # Dashboard UI Components
-│   │   ├── Dashboard.tsx           # Main layout
-│   │   ├── HealthMetrics.tsx       # Real-time metrics
-│   │   ├── InfrastructureCard.tsx  # Resource visualization
-│   │   └── ...                    # Other components
+│   ├── components/                # Dashboard UI Components
+│   │   ├── ui/                    # ShadCN UI Components
+│   │   │   ├── accordion.tsx      # Accordion component
+│   │   │   ├── alert.tsx          # Alert component
+│   │   │   ├── badge.tsx          # Badge component
+│   │   │   ├── button.tsx         # Button component
+│   │   │   ├── card.tsx           # Card component
+│   │   │   ├── progress.tsx       # Progress bar component
+│   │   │   ├── separator.tsx      # Separator component
+│   │   │   ├── tabs.tsx           # Tabs component
+│   │   │   ├── toast.tsx          # Toast notification
+│   │   │   ├── tooltip.tsx        # Tooltip component
+│   │   │   └── ...                # Other UI components
+│   │   │
+│   │   ├── AnsibleStatus.tsx      # Ansible configuration status
+│   │   ├── Dashboard.tsx          # Main dashboard layout
+│   │   ├── HealthMetrics.tsx      # Server health metrics
+│   │   ├── InfrastructureCard.tsx # Cloud resource card
+│   │   ├── Navbar.tsx             # Navigation bar
+│   │   ├── TerraformViewer.tsx    # Terraform config viewer
+│   │   └── WorkflowVisualizer.tsx # CI/CD workflow visualization
 │   │
-│   ├── utils/
-│   │   ├── mockData.ts            # Sample infrastructure data
-│   │   └── useMockHealth.tsx      # Simulated metrics hook
+│   ├── hooks/                     # Custom React hooks
+│   │   ├── useMockHealth.tsx      # Simulated health metrics
+│   │   ├── use-mobile.tsx         # Mobile detection hook
+│   │   └── use-toast.ts           # Toast notification hook
+│   │
+│   ├── lib/                       # Utility libraries
+│   │   └── utils.ts               # General utility functions
+│   │
+│   ├── pages/                     # Application pages
+│   │   ├── Index.tsx              # Main page
+│   │   └── NotFound.tsx           # 404 page
+│   │
+│   ├── utils/                     # Utility functions
+│   │   └── mockData.ts            # Sample infrastructure data
+│   │
+│   ├── App.css                    # Global CSS
+│   ├── App.tsx                    # Main application component
+│   ├── index.css                  # Global CSS imports
+│   ├── main.tsx                   # Application entry point
+│   └── vite-env.d.ts              # TypeScript declarations
 │
-├── infrastructure/       # IaC Configuration
-│   ├── terraform/        # [PLACEHOLDER] Terraform scripts
-│   └── ansible/          # [PLACEHOLDER] Ansible playbooks
-│
-└── ...                  # Other project files
-Getting Started
-
+├── .gitignore                     # Git ignore configuration
+├── bun.lockb                      # Bun lockfile
+├── components.json                # ShadCN components config
+├── eslint.config.js               # ESLint configuration
+├── index.html                     # HTML entry point
+├── package-lock.json              # NPM lock file
+├── package.json                   # NPM package configuration
+├── postcss.config.js              # PostCSS configuration
+├── README.md                      # Project documentation
+├── tailwind.config.ts             # Tailwind CSS configuration
+├── tsconfig.app.json              # TypeScript app configuration
+├── tsconfig.json                  # TypeScript configuration
+├── tsconfig.node.json             # TypeScript Node configuration
+└── vite.config.ts                 # Vite configuration
 
 ---
 
