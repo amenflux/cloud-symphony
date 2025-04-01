@@ -1,6 +1,6 @@
 # Cloud Symphony Automation Dashboard
 
-![Dashboard Preview](https://ibb.co/rfdZ3mXn)
+![Dashboard Preview]([[https://imgur.com/a/g4sEaA3](https://i.postimg.cc/gJmKg9xT/temp-Image4-Xnndr.avif))
 
 A DevOps project demonstrating cloud infrastructure automation with Terraform/Ansible, featuring a visualization dashboard for infrastructure provisioning and configuration management.
 
@@ -76,201 +76,192 @@ cloud-symphony/
 Getting Started
 
 
-## Handling Secrets & Sensitive Information
+---
 
-* Follow DevOps best practices for secrets management.
+## 🔑 Handling Secrets & Sensitive Information
 
-* Use environment variables or AWS Secrets Manager to protect confidential data.
-
-* Provide placeholder links for EC2 instances to simulate real setup while hiding sensitive data.
-
-* Include clear instructions for replacing secrets and variables.
-
-Project Output
-
-A professional Cloud Symphony Automation dashboard that visualizes infrastructure provisioning and configuration management with Terraform and Ansible. The UI displays cloud resources, infrastructure code, deployment pipelines, and real-time metrics.
+- Follow DevOps best practices for **secrets management**.
+- Use **environment variables or AWS Secrets Manager** to protect confidential data.
+- Provide **placeholder links** for EC2 instances to simulate real setup while hiding sensitive data.
+- Include **clear instructions** for replacing secrets and variables.
 
 
-## Customizing the Project
+---
 
-	Dashboard.tsx
+## 🎨 Customizing the Project
 
-This is the main dashboard layout component that structures the layout into sections for cloud infrastructure resources, Infrastructure as Code components, and application health metrics.
+### **Dashboard.tsx**
+The main dashboard layout that organizes sections for cloud resources, Infrastructure as Code, and health metrics.
 
-* Customization:
+**Customization:**
+- **Lines 11-13:** Change the title and description.
+- **Line 20:** Adjust the grid layout (`grid-cols`) to fit your design.
 
-- Lines 11-13: Change the title and description text.
+---
 
-- Line 20: Adjust the grid layout (grid-cols) based on your preferred layout.
+### **HealthMetrics.tsx**
+Displays real-time server health metrics with color-coded progress bars.
 
-	HealthMetrics.tsx
+**Customization:**
+- **Lines 11-14, 16-20:** Adjust thresholds in `getColorClass` and `getProgressColor` functions.
+- **Lines 57, 74, 91:** Modify display text or metric naming.
+- **Add additional metrics** by copying and modifying existing blocks.
 
-Displays real-time server health metrics including CPU, memory, and disk usage with color-coded progress bars.
+---
 
-* Customization:
+### **InfrastructureCard.tsx**
+Renders cards for cloud resources like EC2 instances and IAM roles.
 
-- Lines 11-14, 16-20: Adjust the thresholds in getColorClass and getProgressColor functions.
+**Customization:**
+- **Lines 18-26:** Modify the `getIcon` function for different resource types.
+- **Lines 29-38:** Adjust status colors for your terminology.
+- **Lines 76-116:** Update displayed details for each resource type.
 
-- Lines 57, 74, 91: Modify the display text or metric naming.
+---
 
-- Add additional metrics by copying and modifying existing blocks.
+### **TerraformViewer.tsx**
+Displays Terraform configuration with syntax highlighting and a resource graph.
 
-	InfrastructureCard.tsx
+**Customization:**
+- **Line 11:** Change the card title.
+- **Lines 35-58:** Modify the resource graph visualization.
+- **Terraform code:** Update `mockData.ts`.
 
-Renders cards displaying information about different cloud resources like EC2 instances, security groups, and IAM roles.
+---
 
-* Customization:
+### **AnsibleStatus.tsx**
+Shows the status of Ansible playbook executions and configuration runs.
 
-- Lines 18-26: Modify the getIcon function if using different resource types.
+**Customization:**
+- **Lines 17-27:** Modify `getTaskIcon` for task status types.
+- **Line 53:** Change the card title or description.
+- **Lines 67-91:** Adjust task summaries display.
 
-- Lines 29-38: Adjust status colors based on your status terminology.
+---
 
-- Lines 76-116: Update details displayed for each resource type.
+### **WorkflowVisualizer.tsx**
+Visualizes a CI/CD pipeline using GitHub Actions.
 
-	TerraformViewer.tsx
+**Customization:**
+- **Lines 8-22:** Adjust `getStatusIcon` for your workflow steps.
+- **Lines 24-38:** Modify `getStatusBadge` to match your terminology.
+- **Line 48:** Change the title and description.
 
-Displays Terraform configuration code with syntax highlighting and a simple resource graph visualization.
+---
 
-* Customization:
-
-- Line 11: Change the card title.
-
-- Lines 35-58: Modify the resource graph visualization to match your infrastructure.
-
-- The actual Terraform code is in mockData.ts.
-
-	AnsibleStatus.tsx
-
-Shows the status of Ansible playbook executions, including tasks that succeeded, failed, or were skipped.
-
-* Customization:
-
-- Lines 17-27: Modify the getTaskIcon function to match task status types.
-
-- Line 53: Change the card title or description.
-
-- Lines 67-91: Adjust task summaries display.
-
-	WorkflowVisualizer.tsx
-
-Visualizes a CI/CD pipeline with GitHub Actions.
-
-* Customization:
-
-- Lines 8-22: Adjust getStatusIcon function for your workflow steps.
-
-- Lines 24-38: Modify getStatusBadge function to match your terminology.
-
-- Line 48: Change the title and description.
-
-	useMockHealth.tsx
-
+### **useMockHealth.tsx**
 A React hook that simulates changing server health metrics.
 
-* Customization:
+**Customization:**
+- **Lines 19-26:** Adjust value ranges to simulate server behavior.
+- **Line 29:** Change the update interval (default: 3 seconds).
+- **Add/remove metrics** as needed.
 
-- Lines 19-26: Adjust value ranges to simulate expected server behavior.
+---
 
-- Line 29: Change the update interval (currently 3 seconds).
+### **mockData.ts**
+Holds all mock data for infrastructure, Terraform, Ansible, and CI/CD workflows.
 
-- Add or remove metrics as needed.
+**Customization:**
+- **Lines 3-42:** Update `infrastructureItems` with real cloud resources.
+- **Lines 45-101:** Modify `terraformState` to match your infrastructure.
+- **Lines 104-133:** Update `ansibleRuns` with deployment details.
+- **Lines 136-161:** Adjust `workflowSteps` to match your CI/CD pipeline.
+- **Lines 164-236:** Replace `terraformConfiguration` with your Terraform code.
+- **Lines 239-301:** Update `ansiblePlaybook` with your Ansible code.
 
-	mockData.ts
+---
 
-Contains mock data for cloud resources, Terraform code, Ansible execution details, and workflow steps.
+### **ui/progress.tsx**
+A **shadcn UI** component for dynamic progress bars.
 
-* Customization:
+**Customization:**
+- **Line 12:** Adjust base styling classes.
+- **Line 18:** Modify indicator styling.
 
-- Lines 3-42: Update infrastructureItems with actual cloud resources.
+---
 
-- Lines 45-101: Modify terraformState to match your infrastructure.
+This guide ensures each component is fully customizable to match your infrastructure and design. 🚀
 
-- Lines 104-133: Update ansibleRuns with deployment details.
+---
 
-- Lines 136-161: Adjust workflowSteps to match CI/CD pipeline.
+## **Deployment Instructions**
 
-- Lines 164-236: Replace terraformConfiguration with actual Terraform code.
-
-- Lines 239-301: Update ansiblePlaybook with actual Ansible code.
-
-	ui/progress.tsx
-
-Shadcn UI component for displaying progress bars.
-
-* Customization:
-
-- Line 12: Adjust base styling classes.
-
-- Line 18: Modify indicator styling.
-
-	Deployment Instructions
-
-* Obtain the Code:
+### 📥 Obtain the Code:
+```sh
 git clone https://github.com/your-username/cloud-symphony.git
 cd cloud-symphony
 
-* Install Dependencies:
+---
+
+
+### 📦 Install Dependencies:
+```sh
 npm install
 
-* Configure the Application:
+---
 
-- Update mockData.ts to reflect real infrastructure details.
+### ⚙️ Configure the Application:
+• Update mockData.ts to reflect real infrastructure details.
+• Configure API keys and cloud provider credentials.
 
-- Configure API keys and cloud provider credentials.
+--
 
-* Test Locally:
-
+### 🔄 Test Locally:
+```sh
 npm run dev
 
-- Open localhost:8080 to check functionality.
+• Open localhost:8080 to check functionality.
 
-* Build for Production:
+---
 
+### 📤 Build for Production:
+```sh
 npm run build
 
-* Deploy to Hosting:
+---
 
-- Netlify:
+### 🚀 Deploy to Hosting:
 
+Netlify:
+```sh
 netlify deploy --prod
 
-- Vercel:
-
+Vercel:
+```sh
 vercel
 
-- GitHub Pages:
-
+GitHub Pages:
+```sh
 npm run deploy
 
-* Custom Domain Setup (Optional)
+--
 
-- Add domain in hosting provider dashboard.
+### 🌐 Custom Domain Setup (Optional):
+• Add domain in hosting provider dashboard.
+• Update DNS settings (A record, CNAME).
 
-- Update DNS settings (A record, CNAME).
+---
 
-* Set Up Continuous Deployment (Optional)
+### 🛠 Set Up Continuous Deployment (Optional):
+• Connect GitHub repository to hosting provider.
+• Configure build settings for automatic deployment on push.
 
-- Connect GitHub repository to hosting provider.
+---
 
-- Configure build settings for automatic deployment on push.
+### 📊 Monitor Your Deployment:
+    • Test all functionality.
+    • Set up monitoring tools (e.g., UptimeRobot).
 
-* Monitor Your Deployment:
+---
 
-- Test all functionality.
+### 🔮 Future Enhancements:
+• Replace mock data with real API calls.
+• Implement authentication for secure access.
+• Set up real-time cloud monitoring.
+• Improve error handling & logging.
 
-- Set up monitoring tools (e.g., UptimeRobot).
+⸻
 
-* Future Enhancements:
-
-- Replace mock data with real API calls.
-
-- Implement authentication for secure access.
-
-- Set up real-time cloud monitoring.
-
-- Improve error handling & logging.
-
-
-
-This guide ensures you can deploy Cloud Symphony while customizing it to your infrastructure setup. 
+This guide ensures you can deploy Cloud Symphony while customizing it to your infrastructure setup. 🚀
 
