@@ -120,7 +120,7 @@ cloud-symphony/
 ├── tsconfig.json                  # TypeScript configuration
 ├── tsconfig.node.json             # TypeScript Node configuration
 └── vite.config.ts                 # Vite configuration
-
+```
 ---
 
 ## 🔑 Handling Secrets & Sensitive Information
@@ -233,17 +233,17 @@ This guide ensures each component is fully customizable to match your infrastruc
 ## **Deployment Instructions**
 
 ### 📥 Obtain the Code:
-```sh
+```shell
 git clone https://github.com/your-username/cloud-symphony.git
 cd cloud-symphony
-
+```
 ---
 
 
 ### 📦 Install Dependencies:
-```sh
+```shell
 npm install
-
+```
 ---
 
 ### ⚙️ Configure the Application:
@@ -255,7 +255,7 @@ npm install
 ### 🔄 Test Locally:
 ```sh
 npm run dev
-
+```
 • Open localhost:8080 to check functionality.
 
 ---
@@ -263,7 +263,7 @@ npm run dev
 ### 📤 Build for Production:
 ```sh
 npm run build
-
+```
 ---
 
 ### 🚀 Deploy to Hosting:
@@ -271,15 +271,15 @@ npm run build
 Netlify:
 ```sh
 netlify deploy --prod
-
+```
 Vercel:
 ```sh
 vercel
-
+```
 GitHub Pages:
 ```sh
 npm run deploy
-
+```
 --
 
 ### 🌐 Custom Domain Setup (Optional):
